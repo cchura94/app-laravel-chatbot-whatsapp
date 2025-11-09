@@ -1,0 +1,59 @@
+### Enviar mensaje desde Evolution API
+POST http://localhost:7777/message/sendText/aplicacion1
+Content-Type: application/json
+apikey: 9A8851D24A05-4058-AABD-4DA74214CA35
+
+{
+  "number": "59173277937",
+  "text": "Otra prueba 2",
+   "delay": 5000
+}
+
+### Enviar mensaje de texto desde Laravel
+POST http://127.0.0.1:8000/api/mensaje/enviar
+Content-Type: application/json
+Accept: application/json
+
+{
+    "number": "59173277937",
+    "type": "text",
+    "message": "Hola desde Laravel"
+}
+
+### Enviar mensaje imagen desde Laravel
+POST http://127.0.0.1:8000/api/mensaje/enviar
+Content-Type: application/json
+Accept: application/json
+
+{
+    "number": "59173277937",
+    "type": "image",
+    "file_url": "https://blumbitvirtual.edtics.com/pluginfile.php/6075/course/overviewfiles/Post%20N8N%20%284%29.png",
+    "message": "descripcion de la imagen"
+}
+
+### Enviar mensaje documento desde Laravel
+POST http://127.0.0.1:8000/api/mensaje/enviar
+Content-Type: application/json
+Accept: application/json
+
+{
+    "number": "59173277937",
+    "type": "document",
+    "file_url": "https://www.gob.mx/cms/uploads/attachment/file/93387/Temarios.pdf",
+    "message": "descripcion del documento"
+}
+
+
+
+###
+
+POST https://733a29549563.ngrok-free.app/api/mensaje/enviar
+Content-Type: application/json
+Accept: application/json
+
+{
+    "number": "59173277937",
+    "type": "text",
+    "message": "Hola Pruebaaaaaa"
+}
