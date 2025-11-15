@@ -18,7 +18,7 @@ class OpenaiController extends Controller
 
         $respuesta = Http::withHeaders([
             'Content-Type' => 'application/json',
-            'Authorization' => "Bearer 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"
+            'Authorization' => "Bearer TOKEN_OPEN_AI"
         ])->post("https://api.openai.com/v1/chat/completions", [
             "model" => "gpt-4.1",
             "messages" => [
@@ -48,7 +48,7 @@ class OpenaiController extends Controller
 
         $respuesta = Http::withHeaders([
             'Content-Type' => 'application/json',
-            'Authorization' => "Bearer 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"
+            'Authorization' => "Bearer TOKEN_OPEN_AI"
         ])->post("https://api.openai.com/v1/chat/completions", [
             "model" => "gpt-4.1",
             "messages" => [
