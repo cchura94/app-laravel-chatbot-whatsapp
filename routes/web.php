@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\MensajeController;
+use App\Http\Controllers\OpenaiController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +34,9 @@ Route::put("usuario/{id}", [UsuarioController::class, "funModificar"]); // modif
 Route::delete("usuario/{id}", [UsuarioController::class, "funEliminar"]); // eliminar
 
 Route::resource("contacto", ContactoController::class)->middleware('auth');
+
+Route::get("consultas", [OpenaiController::class, "panelChat"]);
+Route::get("consultas-whatsapp", [MensajeController::class, "panelWhatsapp"]);
 
 Auth::routes();
 

@@ -2,10 +2,10 @@
 @extends('adminlte::page')
 
 
-@section('title', 'Crear Nuevo Usuario')
+@section('title', 'Crear Nuevo Contacto')
 
 @section('content_header')
-    <h1>Crear Nuevo Usuario</h1>
+    <h1>Crear Nuevo Contacto</h1>
 @stop
 
 @section('content')
@@ -13,18 +13,22 @@
     <div class="card-body">
         <div class="row">
             <div class="col-md-6">
-                <form action="/usuario" method="post">
+                <form action="/contacto" method="post">
                     @csrf
                     <label for="">Ingrese Nombre:</label>
-                    <input type="text" name="name" class="form-control">
+                    <input type="text" name="nombre" class="form-control">
                     <br>
-                    <label for="">Ingrese Correo:</label>
-                    <input type="email" name="email" class="form-control">
+                    <label for="">Ingrese Nro Whatsapp:</label>
+                    <input type="number" name="nro_whatsapp" class="form-control">
                     <br>
-                    <label for="">Ingrese Contraseña:</label>
-                    <input type="password" name="password" class="form-control">
+                    <label for="">Ingrese nro_identificacion:</label>
+                    <input type="text" name="nro_identificacion" class="form-control">
                     <br>
-                    <input type="submit" value="Guardar Usuario" class="btn btn-primary">
+                    <label for="">Ingrese Dirección:</label>
+                    <input type="text" name="direccion" class="form-control">
+                    
+                    <br>
+                    <input type="submit" value="Guardar Contacto" class="btn btn-primary">
                     
                 </form>
 

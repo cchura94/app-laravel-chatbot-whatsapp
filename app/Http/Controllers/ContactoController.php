@@ -21,7 +21,7 @@ class ContactoController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.contacto.crear");
     }
 
     /**
@@ -29,7 +29,18 @@ class ContactoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "nro_whatsapp" => "required|unique:contactos"
+        ]);
+
+        $contacto = new Contacto();
+        $contacto->nombre = $request->nombre;
+        $contacto->nro_whatsapp = $request->nro_whatsapp;
+        $contacto->nro_identificacion = $request->nro_identificacion;
+        $contacto->direccion = $request->direccion;
+        $contacto->save();
+
+        return redirect("/contacto");
     }
 
     /**
